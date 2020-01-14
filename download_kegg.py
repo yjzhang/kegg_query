@@ -30,7 +30,7 @@ def simpleParse(data_string):
             elif line.startswith('GENE'):
                 mode = 'gene'
                 point['genes'] = []
-                line_data = line.strip().split(';')
+                line_data = line.strip().split('; ')
                 gene = line_data[0].split()[-1]
                 point['genes'].append(gene)
     return point
