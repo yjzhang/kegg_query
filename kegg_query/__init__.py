@@ -46,7 +46,7 @@ def get_all_cell_cls(species='human', db_dir=DB_DIR):
     conn = sqlite3.connect(db_dir)
     C = conn.cursor()
     if species != 'all':
-        C.execute('SELECT DISTINCT pathwayName, pathwayID FROM pathway_genes WHERE species=?,' (species,))
+        C.execute('SELECT DISTINCT pathwayName, pathwayID FROM pathway_genes WHERE species=?', (species,))
     else:
         C.execute('SELECT DISTINCT pathwayName, pathwayID FROM pathway_genes')
     results = C.fetchall()
